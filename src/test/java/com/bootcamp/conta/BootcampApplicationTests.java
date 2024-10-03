@@ -1,4 +1,4 @@
-package com.bootcamp.bootcamp;
+package com.bootcamp.conta;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

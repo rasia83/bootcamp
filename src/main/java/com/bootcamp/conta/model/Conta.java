@@ -1,0 +1,51 @@
+package com.bootcamp.conta.model;
+
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+@Builder
+@Getter
+@Setter
+@RequiredArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "CONTA")
+public class Conta {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+
+    @Column
+    private String nomeTitular;
+
+    @Column
+    private Integer numeroAgencia;
+
+    @Column
+    private Integer numeroConta;
+
+    @Column
+    private String chavePix;
+
+    @Column
+    private BigDecimal saldo = BigDecimal.ZERO;
+
+    @OneToMany(mappedBy = "conta", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Pix> historicoPix = new ArrayList<>();
+
+    public void sacar(BigDecimal valor){
+        saldo = this.saldo.subtract(valor);
+    }
+
+    public void depositar(BigDecimal valor){
+        saldo = this.saldo.add(valor);
+    }
+
+}

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bootcamp</groupId>
-	<artifactId>bootcamp</artifactId>
+	<artifactId>conta</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bootcamp</name>
+	<name>conta</name>
 	<description>Projeto Bootcamp Matera</description>
 	<url/>
 	<licenses>
@@ -60,6 +60,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>5.5.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
